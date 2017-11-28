@@ -30,6 +30,7 @@ import {
   Animated,
   I18nManager,
   Image,
+  ImageBackground,
   StyleSheet,
   Text,
   TouchableOpacity,
@@ -587,9 +588,9 @@ class NavBar extends React.Component {
         ]}
       >
         {navigationBarBackgroundImage ? (
-          <Image style={navigationBarBackgroundImageStyle} source={navigationBarBackgroundImage}>
+          <ImageBackground style={navigationBarBackgroundImageStyle} source={navigationBarBackgroundImage}>
             {contents}
-          </Image>
+          </ImageBackground>
         ) : contents}
       </Animated.View>
     );
