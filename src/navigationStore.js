@@ -626,7 +626,7 @@ class NavigationStore {
     const res = {};
     const order = [];
     const {
-      navigator, renderer, contentComponent, drawerWidth, drawerLockMode, tabBarPosition, lazy, duration, ...parentProps
+      navigator, renderer, contentComponent, drawerWidth, drawerLockMode, tabBarPosition, lazy, duration, material, ...parentProps
     } = scene.props;
     let {
       legacy, tabs, modal, lightbox, overlay, drawer, transitionConfig, tabBarComponent,
@@ -829,7 +829,7 @@ class NavigationStore {
         if (!tabBarComponent) {
           tabBarComponent = tabBarPosition === 'top' ? props => <DEPRECATED_TabBarTop {...props} {...commonProps} /> : props => <DEPRECATED_TabBarBottom {...props} {...commonProps} />;
         }
-      } else if (tabBarPosition !== 'top') {
+      } else if (tabBarPosition !== 'top' && !material) {
         createTabNavigator = createBottomTabNavigator;
       }
 
